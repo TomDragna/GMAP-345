@@ -34,8 +34,9 @@ public class Player_controller : MonoBehaviour {
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        
-        Vector3 movement = new Vector3(-moveVertical, 0.0f, moveHorizontal);
+
+        //controls "8" = deaccelerator
+        Vector3 movement = new Vector3(-moveVertical / 8, 0.0f, moveHorizontal);
                 
         rb.AddForce(movement * speed);
 
