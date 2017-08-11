@@ -42,8 +42,8 @@ public class Player_controller : MonoBehaviour {
 
 		if (timeToGrow <= 0f) {
 			if(transform.localScale.x < scaleCap && transform.localScale.y < scaleCap && transform.localScale.z < scaleCap){
-				Debug.Log ("Growing");
-				transform.localScale += new Vector3 (scaleRate,scaleRate,scaleRate);
+                //Debug.Log ("Growing");
+                transform.localScale += new Vector3 (scaleRate,scaleRate,scaleRate);
 			}
 			timeToGrow = growEvery;
 		}
