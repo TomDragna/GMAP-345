@@ -1,0 +1,453 @@
+fileFormatVersion: 2
+guid: c7ed9809a0c42fd40a28a7a24656aaa1
+timeCreated: 1502575476
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: bars
+    100002: bars1
+    100004: beamBars
+    100006: beamBars1
+    100008: beams
+    100010: beams1
+    100012: door
+    100014: door1
+    100016: door2
+    100018: door3
+    100020: //RootNode
+    100022: pCube12
+    100024: pCube12 1
+    100026: pCube16
+    100028: pCube16 1
+    100030: pCube17
+    100032: pCube17 1
+    100034: pCube18
+    100036: pCube18 1
+    100038: pCylinder1
+    100040: pCylinder1 1
+    100042: pCylinder10
+    100044: pCylinder10 1
+    100046: pCylinder11
+    100048: pCylinder11 1
+    100050: pCylinder2
+    100052: pCylinder2 1
+    100054: pCylinder3
+    100056: pCylinder3 1
+    100058: pCylinder4
+    100060: pCylinder4 1
+    100062: pCylinder5
+    100064: pCylinder5 1
+    100066: pCylinder6
+    100068: pCylinder6 1
+    100070: pCylinder7
+    100072: pCylinder7 1
+    100074: pCylinder8
+    100076: pCylinder8 1
+    100078: pCylinder9
+    100080: pCylinder9 1
+    100082: polySurface1
+    100084: polySurface1 1
+    100086: polySurface1 2
+    100088: polySurface1 3
+    100090: polySurface1 4
+    100092: polySurface1 5
+    100094: polySurface1 6
+    100096: polySurface1 7
+    100098: polySurface1 8
+    100100: polySurface1 9
+    100102: polySurface2
+    100104: polySurface2 1
+    100106: polySurface2 2
+    100108: polySurface2 3
+    100110: polySurface2 4
+    100112: polySurface2 5
+    100114: polySurface2 6
+    100116: polySurface2 7
+    100118: polySurface2 8
+    100120: polySurface2 9
+    100122: polySurface3
+    100124: polySurface3 1
+    100126: polySurface3 2
+    100128: polySurface3 3
+    100130: polySurface3 4
+    100132: polySurface3 5
+    100134: polySurface3 6
+    100136: polySurface3 7
+    100138: polySurface3 8
+    100140: polySurface3 9
+    100142: roofing
+    100144: walls
+    100146: window
+    100148: window1
+    100150: window2
+    100152: window3
+    100154: window4
+    100156: window5
+    100158: window6
+    100160: window7
+    100162: window8
+    100164: window9
+    400000: bars
+    400002: bars1
+    400004: beamBars
+    400006: beamBars1
+    400008: beams
+    400010: beams1
+    400012: door
+    400014: door1
+    400016: door2
+    400018: door3
+    400020: //RootNode
+    400022: pCube12
+    400024: pCube12 1
+    400026: pCube16
+    400028: pCube16 1
+    400030: pCube17
+    400032: pCube17 1
+    400034: pCube18
+    400036: pCube18 1
+    400038: pCylinder1
+    400040: pCylinder1 1
+    400042: pCylinder10
+    400044: pCylinder10 1
+    400046: pCylinder11
+    400048: pCylinder11 1
+    400050: pCylinder2
+    400052: pCylinder2 1
+    400054: pCylinder3
+    400056: pCylinder3 1
+    400058: pCylinder4
+    400060: pCylinder4 1
+    400062: pCylinder5
+    400064: pCylinder5 1
+    400066: pCylinder6
+    400068: pCylinder6 1
+    400070: pCylinder7
+    400072: pCylinder7 1
+    400074: pCylinder8
+    400076: pCylinder8 1
+    400078: pCylinder9
+    400080: pCylinder9 1
+    400082: polySurface1
+    400084: polySurface1 1
+    400086: polySurface1 2
+    400088: polySurface1 3
+    400090: polySurface1 4
+    400092: polySurface1 5
+    400094: polySurface1 6
+    400096: polySurface1 7
+    400098: polySurface1 8
+    400100: polySurface1 9
+    400102: polySurface2
+    400104: polySurface2 1
+    400106: polySurface2 2
+    400108: polySurface2 3
+    400110: polySurface2 4
+    400112: polySurface2 5
+    400114: polySurface2 6
+    400116: polySurface2 7
+    400118: polySurface2 8
+    400120: polySurface2 9
+    400122: polySurface3
+    400124: polySurface3 1
+    400126: polySurface3 2
+    400128: polySurface3 3
+    400130: polySurface3 4
+    400132: polySurface3 5
+    400134: polySurface3 6
+    400136: polySurface3 7
+    400138: polySurface3 8
+    400140: polySurface3 9
+    400142: roofing
+    400144: walls
+    400146: window
+    400148: window1
+    400150: window2
+    400152: window3
+    400154: window4
+    400156: window5
+    400158: window6
+    400160: window7
+    400162: window8
+    400164: window9
+    2300000: bars
+    2300002: bars1
+    2300004: door
+    2300006: door1
+    2300008: door2
+    2300010: door3
+    2300012: pCube12
+    2300014: pCube12 1
+    2300016: pCube16
+    2300018: pCube16 1
+    2300020: pCube17
+    2300022: pCube17 1
+    2300024: pCube18
+    2300026: pCube18 1
+    2300028: pCylinder1
+    2300030: pCylinder1 1
+    2300032: pCylinder10
+    2300034: pCylinder10 1
+    2300036: pCylinder11
+    2300038: pCylinder11 1
+    2300040: pCylinder2
+    2300042: pCylinder2 1
+    2300044: pCylinder3
+    2300046: pCylinder3 1
+    2300048: pCylinder4
+    2300050: pCylinder4 1
+    2300052: pCylinder5
+    2300054: pCylinder5 1
+    2300056: pCylinder6
+    2300058: pCylinder6 1
+    2300060: pCylinder7
+    2300062: pCylinder7 1
+    2300064: pCylinder8
+    2300066: pCylinder8 1
+    2300068: pCylinder9
+    2300070: pCylinder9 1
+    2300072: polySurface1
+    2300074: polySurface1 1
+    2300076: polySurface1 2
+    2300078: polySurface1 3
+    2300080: polySurface1 4
+    2300082: polySurface1 5
+    2300084: polySurface1 6
+    2300086: polySurface1 7
+    2300088: polySurface1 8
+    2300090: polySurface1 9
+    2300092: polySurface2
+    2300094: polySurface2 1
+    2300096: polySurface2 2
+    2300098: polySurface2 3
+    2300100: polySurface2 4
+    2300102: polySurface2 5
+    2300104: polySurface2 6
+    2300106: polySurface2 7
+    2300108: polySurface2 8
+    2300110: polySurface2 9
+    2300112: polySurface3
+    2300114: polySurface3 1
+    2300116: polySurface3 2
+    2300118: polySurface3 3
+    2300120: polySurface3 4
+    2300122: polySurface3 5
+    2300124: polySurface3 6
+    2300126: polySurface3 7
+    2300128: polySurface3 8
+    2300130: polySurface3 9
+    2300132: roofing
+    2300134: walls
+    3300000: bars
+    3300002: bars1
+    3300004: door
+    3300006: door1
+    3300008: door2
+    3300010: door3
+    3300012: pCube12
+    3300014: pCube12 1
+    3300016: pCube16
+    3300018: pCube16 1
+    3300020: pCube17
+    3300022: pCube17 1
+    3300024: pCube18
+    3300026: pCube18 1
+    3300028: pCylinder1
+    3300030: pCylinder1 1
+    3300032: pCylinder10
+    3300034: pCylinder10 1
+    3300036: pCylinder11
+    3300038: pCylinder11 1
+    3300040: pCylinder2
+    3300042: pCylinder2 1
+    3300044: pCylinder3
+    3300046: pCylinder3 1
+    3300048: pCylinder4
+    3300050: pCylinder4 1
+    3300052: pCylinder5
+    3300054: pCylinder5 1
+    3300056: pCylinder6
+    3300058: pCylinder6 1
+    3300060: pCylinder7
+    3300062: pCylinder7 1
+    3300064: pCylinder8
+    3300066: pCylinder8 1
+    3300068: pCylinder9
+    3300070: pCylinder9 1
+    3300072: polySurface1
+    3300074: polySurface1 1
+    3300076: polySurface1 2
+    3300078: polySurface1 3
+    3300080: polySurface1 4
+    3300082: polySurface1 5
+    3300084: polySurface1 6
+    3300086: polySurface1 7
+    3300088: polySurface1 8
+    3300090: polySurface1 9
+    3300092: polySurface2
+    3300094: polySurface2 1
+    3300096: polySurface2 2
+    3300098: polySurface2 3
+    3300100: polySurface2 4
+    3300102: polySurface2 5
+    3300104: polySurface2 6
+    3300106: polySurface2 7
+    3300108: polySurface2 8
+    3300110: polySurface2 9
+    3300112: polySurface3
+    3300114: polySurface3 1
+    3300116: polySurface3 2
+    3300118: polySurface3 3
+    3300120: polySurface3 4
+    3300122: polySurface3 5
+    3300124: polySurface3 6
+    3300126: polySurface3 7
+    3300128: polySurface3 8
+    3300130: polySurface3 9
+    3300132: roofing
+    3300134: walls
+    4300000: polySurface1
+    4300002: polySurface2
+    4300004: polySurface3
+    4300006: polySurface1
+    4300008: polySurface2
+    4300010: polySurface3
+    4300012: polySurface1
+    4300014: polySurface2
+    4300016: polySurface3
+    4300018: polySurface1
+    4300020: polySurface2
+    4300022: polySurface3
+    4300024: polySurface1
+    4300026: polySurface2
+    4300028: polySurface3
+    4300030: polySurface1
+    4300032: polySurface2
+    4300034: polySurface3
+    4300036: door3
+    4300038: door2
+    4300040: bars1
+    4300042: pCube12
+    4300044: pCube16
+    4300046: pCube17
+    4300048: pCube18
+    4300050: pCylinder10
+    4300052: pCylinder4
+    4300054: pCylinder7
+    4300056: pCylinder5
+    4300058: pCylinder8
+    4300060: pCylinder6
+    4300062: pCylinder3
+    4300064: pCylinder1
+    4300066: pCylinder9
+    4300068: pCylinder11
+    4300070: pCylinder2
+    4300072: polySurface1
+    4300074: polySurface2
+    4300076: polySurface3
+    4300078: polySurface1
+    4300080: polySurface2
+    4300082: polySurface3
+    4300084: door1
+    4300086: door
+    4300088: bars
+    4300090: pCube12
+    4300092: pCube16
+    4300094: pCube17
+    4300096: pCube18
+    4300098: pCylinder10
+    4300100: pCylinder4
+    4300102: pCylinder7
+    4300104: pCylinder5
+    4300106: pCylinder8
+    4300108: pCylinder6
+    4300110: pCylinder3
+    4300112: pCylinder1
+    4300114: pCylinder9
+    4300116: pCylinder11
+    4300118: pCylinder2
+    4300120: polySurface1
+    4300122: polySurface2
+    4300124: polySurface3
+    4300126: polySurface3
+    4300128: polySurface2
+    4300130: polySurface1
+    4300132: roofing
+    4300134: walls
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
