@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowball_terrain", "Snowball_terrain.csproj", "{FAC99853-BBD5-F06A-2BB5-0F821E2C37CA}"
 EndProject
 Global
