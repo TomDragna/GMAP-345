@@ -10,7 +10,9 @@ public class Player_controller : MonoBehaviour {
 	public float scaleRateBonus;	//size gained from skier collisions
 	public float scaleCap;		//max size allowed
 	public float descaleRate;	//growth penalty for obstacle collisions
-	private float timeToGrow;
+    public float deaccellX;
+
+    private float timeToGrow;
 	private Vector3 startScale;	//used for lose condition i.e: if current scale < start, you're dunzo
 	//private bool growFlag;
 
@@ -36,7 +38,7 @@ public class Player_controller : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         //controls "8" = deaccelerator
-        Vector3 movement = new Vector3(-moveVertical / 8, 0.0f, moveHorizontal);
+        Vector3 movement = new Vector3(-moveVertical / deaccellX, 0.0f, moveHorizontal * 2);
                 
         rb.AddForce(movement * speed);
 
