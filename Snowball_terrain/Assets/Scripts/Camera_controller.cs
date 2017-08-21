@@ -37,9 +37,10 @@ public class Camera_controller : MonoBehaviour {
         distance = minDistance + scaleRate;
         
         transform.position = (transform.position - player.transform.position).normalized * distance + player.transform.position;
+        
         //Debug.Log(distance);
         //transform.position = player.transform.position + offset;
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+        //offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
         //transform.position = player.transform.position + offset;
         transform.LookAt(player.transform.position);
     }

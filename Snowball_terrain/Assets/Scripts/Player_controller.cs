@@ -11,7 +11,7 @@ public class Player_controller : MonoBehaviour {
 	public float scaleCap;		//max size allowed
 	public float descaleRate;	//growth penalty for obstacle collisions
     public float deaccellX;
-
+    
     private float timeToGrow;
 	private Vector3 startScale;	//used for lose condition i.e: if current scale < start, you're dunzo
 	//private bool growFlag;
