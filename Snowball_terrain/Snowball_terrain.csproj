@@ -89,6 +89,9 @@
     <Compile Include="Assets\Scripts\Player_controller.cs" />
     <Compile Include="Assets\Scripts\Trail_controller.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Wispy Sky\ReadMe.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
