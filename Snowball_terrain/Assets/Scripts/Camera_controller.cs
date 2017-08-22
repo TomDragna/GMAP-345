@@ -15,6 +15,9 @@ public class Camera_controller : MonoBehaviour {
     private Vector3 offset;
 
 
+    private Vector3 cameraTarget;   //Where camera should look
+    public float cTargetyOffset;    //how high above character to look
+
     void Start ()
     {
         minDistance = Vector3.Distance(this.transform.position, player.transform.position);
@@ -36,12 +39,14 @@ public class Camera_controller : MonoBehaviour {
 
         distance = minDistance + scaleRate;
         
-        transform.position = (transform.position - player.transform.position).normalized * distance + player.transform.position;
-        
+        transform.position = (offset).normalized * distance + player.transform.position;
+
         //Debug.Log(distance);
         //transform.position = player.transform.position + offset;
         //offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
         //transform.position = player.transform.position + offset;
-        transform.LookAt(player.transform.position);
+
+        cameraTarget = new Vector3(player.transform.position.x, player.transform.position.y + cTargetyOffset, player.transform.position.z);
+        transform.LookAt(cameraTarget);
     }
 }
