@@ -52,12 +52,7 @@ public class Player_controller : MonoBehaviour {
     }
 
 
-	void onCollisionEnter(Collision other){
-		/*if(other.gameObject.tag == "Terrain"){
-			growFlag = true;
-		}*/
-
-		//These haven't been tested yet------------------------------------------------------------
+	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Skier") {
 			Debug.Log ("Good collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
@@ -67,7 +62,6 @@ public class Player_controller : MonoBehaviour {
 			transform.localScale -= new Vector3 (descaleRate,descaleRate,descaleRate);
 			//score stuff
 		}
-		//----------------------------------------------------------------------------------------
 
 	}
 	/*
