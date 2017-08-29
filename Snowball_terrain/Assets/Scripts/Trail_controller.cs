@@ -18,12 +18,18 @@ public class Trail_controller : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate ()
     {
-        
-        Player_controller s_controller = player.GetComponent<Player_controller>();
-        float scaleRate = s_controller.scaleRate;
+		if(player.GetComponent<Player_controller>().gameLost || player.GetComponent<Player_controller>().gameWon){
+			//stop the particles
+		}
+		else
+		{
 
-        transform.localScale += new Vector3(scaleRate, scaleRate, scaleRate);
+        	Player_controller s_controller = player.GetComponent<Player_controller>();
+        	float scaleRate = s_controller.scaleRate;
 
-        transform.position = player.transform.position + offset;
+       		transform.localScale += new Vector3(scaleRate, scaleRate, scaleRate);
+
+       		transform.position = player.transform.position + offset;
+		}
 	}
 }

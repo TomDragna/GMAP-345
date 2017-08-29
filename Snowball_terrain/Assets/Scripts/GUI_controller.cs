@@ -33,14 +33,17 @@ public class GUI_controller : MonoBehaviour {
     {
         Rigidbody rb = player.GetComponent<Rigidbody>();
         Renderer rend = player.GetComponent<Renderer>();
-
-        diameter = rend.bounds.size.x;
-        speed = rb.velocity.magnitude;
-        points = 10;
-        //Debug.Log(points);
-        AddSize(diameter);
-        AddMph(speed);
-        AddPoints(points);
+		if (!player.GetComponent<Player_controller> ().gameLost) {
+			diameter = rend.bounds.size.x;
+			speed = rb.velocity.magnitude;
+			points = 10;
+			//Debug.Log(points);
+			AddSize (diameter);
+			AddMph (speed);
+			AddPoints (points);
+		} else {
+			//speedText.text = "OVER";
+		}
     }
 
     void AddSize(float fat)

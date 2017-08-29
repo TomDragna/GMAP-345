@@ -14,12 +14,16 @@ public class Player_controller : MonoBehaviour {
     
     private float timeToGrow;
 	private Vector3 startScale;	//used for lose condition i.e: if current scale < start, you're dunzo
-	//private bool growFlag;
+	public bool gameLost;
+	public bool gameWon;
+
 
     private Rigidbody rb;
 	// Use this for initialization
 	void Start ()
     {
+		gameLost = false;
+		gameWon = false;
         rb = GetComponent<Rigidbody>();	
 		timeToGrow = growEvery;
 		//growFlag = false;
@@ -31,6 +35,8 @@ public class Player_controller : MonoBehaviour {
 		if (transform.localScale.x < startScale.x && transform.localScale.y < startScale.y && transform.localScale.z < startScale.z) {
 			//lose condition check
 			Debug.Log ("you lost");
+			gameLost = true;
+			gameOver ();
 		}
 		timeToGrow -= Time.deltaTime;
 
@@ -64,10 +70,9 @@ public class Player_controller : MonoBehaviour {
 		}
 
 	}
-	/*
-	void onCollisionExit(Collision other){
-		if(other.gameObject.tag == "Terrain"){
-			growFlag = false;
-		}
-	}*/
+
+	void gameOver(){
+		rb.constraints = RigidbodyConstraints.FreezeAll;
+
+	}
 }
