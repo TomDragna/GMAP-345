@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MooreTrack.unity
+- path: Assets/Scenes/MooreTrackUpdate.unity
   isLoaded: 1
   isActive: 1
