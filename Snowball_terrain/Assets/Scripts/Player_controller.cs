@@ -11,7 +11,8 @@ public class Player_controller : MonoBehaviour {
 	public float scaleCap;		//max size allowed
 	public float descaleRate;	//growth penalty for obstacle collisions
     public float deaccellX;
-    
+
+    private float weirdo;
     private float timeToGrow;
 	private Vector3 startScale;	//used for lose condition i.e: if current scale < start, you're dunzo
 	public bool gameLost;
@@ -32,7 +33,9 @@ public class Player_controller : MonoBehaviour {
 
 	void FixedUpdate ()
     {
-		if (transform.localScale.x < startScale.x && transform.localScale.y < startScale.y && transform.localScale.z < startScale.z) {
+        Renderer rend = this.GetComponent<Renderer>();
+
+        if (transform.localScale.x < startScale.x && transform.localScale.y < startScale.y && transform.localScale.z < startScale.z) {
 			//lose condition check
 			Debug.Log ("you lost");
 			gameLost = true;
@@ -45,14 +48,28 @@ public class Player_controller : MonoBehaviour {
 
         //controls "8" = deaccelerator
         Vector3 movement = new Vector3(-moveVertical / deaccellX, 0.0f, moveHorizontal * 2);
-                
-        rb.AddForce(movement * speed);
+
+        
 
 		if (timeToGrow <= 0f) {
 			if(transform.localScale.x < scaleCap && transform.localScale.y < scaleCap && transform.localScale.z < scaleCap){
                 //Debug.Log ("Growing");
                 transform.localScale += new Vector3 (scaleRate,scaleRate,scaleRate);
-			}
+
+                if (rb.velocity.magnitude <= 89.5)
+                {
+                    rb.AddForce(movement * speed);
+                }
+
+                if (((rend.bounds.size.x * 3.28f) >= 7))
+                {
+                    weirdo = speed * 2.5f;
+                    if (rb.velocity.magnitude <= 89.5)
+                    {
+                        rb.AddForce(movement * weirdo);
+                    }
+                }
+            }
 			timeToGrow = growEvery;
 		}
     }

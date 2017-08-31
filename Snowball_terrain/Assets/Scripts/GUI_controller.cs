@@ -34,9 +34,9 @@ public class GUI_controller : MonoBehaviour {
         Rigidbody rb = player.GetComponent<Rigidbody>();
         Renderer rend = player.GetComponent<Renderer>();
 		if (!player.GetComponent<Player_controller> ().gameLost) {
-			diameter = rend.bounds.size.x;
-			speed = rb.velocity.magnitude;
-			points = 10;
+			diameter = rend.bounds.size.x * 3.28f;
+			speed = rb.velocity.magnitude * 2.2369362912f;
+			points = 5;
 			//Debug.Log(points);
 			AddSize (diameter);
 			AddMph (speed);
@@ -67,11 +67,11 @@ public class GUI_controller : MonoBehaviour {
 
     void UpdateSize()
     {
-        sizeText.text = size + " m";
+        sizeText.text = "SIZE: " + size + " Ft";
     }
     void UpdateMph()
     {
-        speedText.text = mph + " MPH";
+        speedText.text = "SPEED: " + mph + " MPH";
     }
     void UpdateScore()
     {
