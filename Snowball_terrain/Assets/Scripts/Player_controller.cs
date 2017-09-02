@@ -17,7 +17,8 @@ public class Player_controller : MonoBehaviour {
 	private Vector3 startScale;	//used for lose condition i.e: if current scale < start, you're dunzo
 	public bool gameLost;
 	public bool gameWon;
-
+	private bool grounded;
+	public float jumpMod;
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -25,6 +26,7 @@ public class Player_controller : MonoBehaviour {
     {
 		gameLost = false;
 		gameWon = false;
+		grounded = true;
         rb = GetComponent<Rigidbody>();	
 		timeToGrow = growEvery;
 		//growFlag = false;
@@ -41,6 +43,11 @@ public class Player_controller : MonoBehaviour {
 			gameLost = true;
 			gameOver ();
 		}
+
+		if(grounded == false){
+			GetComponent<Rigidbody> ().AddForce (Vector3.down * (GetComponent<Rigidbody>().mass*jumpMod));
+		}
+
 		timeToGrow -= Time.deltaTime;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -77,19 +84,37 @@ public class Player_controller : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Skier") {
-			Debug.Log ("Good collision");
+			Debug.Log ("Skier collision");
+			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
+			//score stuff
+		}else if(other.gameObject.tag == "Snowman"){
+			Debug.Log ("Snowman collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
 			//score stuff
 		}else if(other.gameObject.tag == "Obstacle"){
 			Debug.Log ("bad collision");
 			transform.localScale -= new Vector3 (descaleRate,descaleRate,descaleRate);
 			//score stuff
+		}else if(other.gameObject.tag == "Ground"){
+			grounded = true;
+			Debug.Log ("on ground");
 		}
 
 	}
 
+	void OnCollisionExit(Collision other){
+		if(other.gameObject.tag == "Ground"){
+			grounded = false;
+			Debug.Log ("off ground");
+		}
+	}
+
 	void gameOver(){
 		rb.constraints = RigidbodyConstraints.FreezeAll;
-
+		if(gameLost == false){
+			//do x
+		}else if(gameWon == false){
+			//do y
+		}
 	}
 }
