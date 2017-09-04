@@ -66,7 +66,7 @@ public class Player_controller : MonoBehaviour {
                 //Debug.Log ("Growing");
                 transform.localScale += new Vector3 (scaleRate,scaleRate,scaleRate);
 
-                if (rb.velocity.magnitude <= 89.5)
+                if (rb.velocity.magnitude <= 111.5)
                 {
                     rb.AddForce(movement * speed);
                 }
@@ -74,9 +74,14 @@ public class Player_controller : MonoBehaviour {
                 if (((rend.bounds.size.x * 3.28f) >= 7))
                 {
                     weirdo = speed * 2.5f;
-                    if (rb.velocity.magnitude <= 89.5)
+                    if (rb.velocity.magnitude <= 111.5)
                     {
                         rb.AddForce(movement * weirdo);
+                    }
+                    if (rb.velocity.magnitude > 111.5)
+                    {
+                        rb.AddForce(movement * (weirdo*2));
+                        rb.velocity = rb.velocity.normalized * 111.5f;
                     }
                 }
             }
