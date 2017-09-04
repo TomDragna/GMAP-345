@@ -20,8 +20,11 @@ public class Player_controller : MonoBehaviour {
 	private bool grounded;
 	public float jumpMod;
 	public GameObject ski_hit;
+	public int skiBonus;
 	public GameObject snowman_hit;
-
+	public int snowBonus;
+	public int obstaclePenalty;
+	public GameObject gui;
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -97,7 +100,7 @@ public class Player_controller : MonoBehaviour {
 			Destroy (other.gameObject);
 			GameObject skiHit = Instantiate (ski_hit);
 			skiHit.transform.position = transform.position;
-			//score stuff
+			gui.GetComponent<GUI_controller> ().AddPoints (skiBonus);
 		}else if(other.gameObject.tag == "Snowman"){
 			Debug.Log ("Snowman collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
@@ -105,11 +108,11 @@ public class Player_controller : MonoBehaviour {
 			snowHit.transform.position = transform.position;
 			//I want to add something so that the snowmen still get knocked around but get destroyed eventually. still wip for now
 			Destroy (other.gameObject);
-			//score stuff
+			gui.GetComponent<GUI_controller> ().AddPoints (snowBonus);
 		}else if(other.gameObject.tag == "Obstacle"){
 			Debug.Log ("bad collision");
 			transform.localScale -= new Vector3 (descaleRate,descaleRate,descaleRate);
-			//score stuff
+			gui.GetComponent<GUI_controller> ().subtractPoints (obstaclePenalty);
 		}else if(other.gameObject.tag == "Ground"){
 			if (grounded == false) {
 				GameObject groundHit = Instantiate (snowman_hit);

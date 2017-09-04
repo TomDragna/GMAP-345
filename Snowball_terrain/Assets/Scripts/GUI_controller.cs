@@ -58,12 +58,17 @@ public class GUI_controller : MonoBehaviour {
         mph = Mathf.Round(newMph * 100f) / 100f;
         UpdateMph();
     }
-    void AddPoints(int points)
+    public void AddPoints(int points)
     {
 
         score += points;
         UpdateScore();
     }
+
+	public void subtractPoints(int points){
+		score -= points;
+		UpdateScore ();
+	}
 
     void UpdateSize()
     {
