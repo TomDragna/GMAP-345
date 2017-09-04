@@ -95,7 +95,8 @@ public class Player_controller : MonoBehaviour {
 		}else if(other.gameObject.tag == "Snowman"){
 			Debug.Log ("Snowman collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
-			GameObject skiHit = Instantiate (ski_hit);
+			GameObject skiHit = Instantiate (snowman_hit);
+			//I want to add something so that the snowmen still get knocked around but get destroyed eventually. still wip for now
 			Destroy (other.gameObject);
 			//score stuff
 		}else if(other.gameObject.tag == "Obstacle"){
