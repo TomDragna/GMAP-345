@@ -5,13 +5,16 @@ using UnityEngine;
 public class Trail_controller : MonoBehaviour {
 
     public GameObject player;
+    public GameObject follow;
 
+    private float minDistance;
     private Vector3 offset;
-
+    private float distance;
     // Use this for initialization
     void Start ()
     {
-        
+        minDistance = Vector3.Distance(this.transform.position, player.transform.position);
+
         offset = transform.position - player.transform.position;
     }
 	
@@ -23,13 +26,16 @@ public class Trail_controller : MonoBehaviour {
 		}
 		else
 		{
+            
 
-        	Player_controller s_controller = player.GetComponent<Player_controller>();
+            Player_controller s_controller = player.GetComponent<Player_controller>();
         	float scaleRate = s_controller.scaleRate;
 
        		transform.localScale += new Vector3(scaleRate, scaleRate, scaleRate);
 
-       		transform.position = player.transform.position + offset;
+            distance = minDistance + scaleRate;
+
+            transform.position = (offset).normalized * distance + follow.transform.position;
 		}
 	}
 }

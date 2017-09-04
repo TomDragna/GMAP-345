@@ -80,7 +80,7 @@ public class Player_controller : MonoBehaviour {
                     }
                     if (rb.velocity.magnitude > 111.5)
                     {
-                        rb.AddForce(movement * (weirdo*2));
+                        rb.AddForce(movement * (weirdo*1.75f));
                         rb.velocity = rb.velocity.normalized * 111.5f;
                     }
                 }
