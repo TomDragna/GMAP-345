@@ -84,7 +84,7 @@ public class Player_controller : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Skier") {
-			//Debug.Log ("Skier collision");
+			Debug.Log ("Skier collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
 			//score stuff
 		}else if(other.gameObject.tag == "Snowman"){
@@ -97,9 +97,7 @@ public class Player_controller : MonoBehaviour {
 			//score stuff
 		}else if(other.gameObject.tag == "Ground"){
 			grounded = true;
-			//Debug.Log ("on ground");
-		}else if(other.gameObject.tag == "Landing"){
-			gameWon = true;
+			Debug.Log ("on ground");
 		}
 
 	}
@@ -112,11 +110,10 @@ public class Player_controller : MonoBehaviour {
 	}
 
 	void gameOver(){
-		if(gameLost == true){
-			rb.constraints = RigidbodyConstraints.FreezeAll;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
+		if(gameLost == false){
 			//do x
-		}else if(gameWon == true){
-			Time.timeScale = 0.5f;	//slow time 50%
+		}else if(gameWon == false){
 			//do y
 		}
 	}
