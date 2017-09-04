@@ -65,7 +65,7 @@ public class Player_controller : MonoBehaviour {
         
 
 		if (timeToGrow <= 0f) {
-			if(transform.localScale.x < scaleCap && transform.localScale.y < scaleCap && transform.localScale.z < scaleCap){
+			if(transform.localScale.x < scaleCap && transform.localScale.y < scaleCap && transform.localScale.z < scaleCap && gameLost == false){
                 //Debug.Log ("Growing");
                 transform.localScale += new Vector3 (scaleRate,scaleRate,scaleRate);
 
@@ -132,10 +132,11 @@ public class Player_controller : MonoBehaviour {
 	}
 
 	void gameOver(){
-		if(gameLost == false){
+		if(gameLost == true){
 			rb.constraints = RigidbodyConstraints.FreezeAll;
+
 			//do x
-		}else if(gameWon == false){
+		}else if(gameWon == true){
 			//do y
 		}
 	}

@@ -23,6 +23,7 @@ public class Trail_controller : MonoBehaviour {
     {
 		if(player.GetComponent<Player_controller>().gameLost || player.GetComponent<Player_controller>().gameWon){
 			//stop the particles
+			GetComponent<ParticleSystem>().Stop();
 		}
 		else
 		{
