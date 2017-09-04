@@ -96,11 +96,13 @@ public class Player_controller : MonoBehaviour {
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
 			Destroy (other.gameObject);
 			GameObject skiHit = Instantiate (ski_hit);
+			skiHit.transform.position = transform.position;
 			//score stuff
 		}else if(other.gameObject.tag == "Snowman"){
 			Debug.Log ("Snowman collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
-			GameObject skiHit = Instantiate (snowman_hit);
+			GameObject snowHit = Instantiate (snowman_hit);
+			snowHit.transform.position = transform.position;
 			//I want to add something so that the snowmen still get knocked around but get destroyed eventually. still wip for now
 			Destroy (other.gameObject);
 			//score stuff
@@ -109,6 +111,10 @@ public class Player_controller : MonoBehaviour {
 			transform.localScale -= new Vector3 (descaleRate,descaleRate,descaleRate);
 			//score stuff
 		}else if(other.gameObject.tag == "Ground"){
+			if (grounded == false) {
+				GameObject groundHit = Instantiate (snowman_hit);
+				groundHit.transform.position = transform.position;
+			}
 			grounded = true;
 			//Debug.Log ("on ground");
 		}
@@ -123,8 +129,8 @@ public class Player_controller : MonoBehaviour {
 	}
 
 	void gameOver(){
-		rb.constraints = RigidbodyConstraints.FreezeAll;
 		if(gameLost == false){
+			rb.constraints = RigidbodyConstraints.FreezeAll;
 			//do x
 		}else if(gameWon == false){
 			//do y
