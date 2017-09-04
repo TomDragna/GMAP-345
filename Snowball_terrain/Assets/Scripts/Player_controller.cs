@@ -19,6 +19,9 @@ public class Player_controller : MonoBehaviour {
 	public bool gameWon;
 	private bool grounded;
 	public float jumpMod;
+	public GameObject ski_hit;
+	public GameObject snowman_hit;
+
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -86,10 +89,14 @@ public class Player_controller : MonoBehaviour {
 		if (other.gameObject.tag == "Skier") {
 			Debug.Log ("Skier collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
+			Destroy (other.gameObject);
+			GameObject skiHit = Instantiate (ski_hit);
 			//score stuff
 		}else if(other.gameObject.tag == "Snowman"){
 			Debug.Log ("Snowman collision");
 			transform.localScale += new Vector3 (scaleRateBonus, scaleRateBonus, scaleRateBonus);
+			GameObject skiHit = Instantiate (ski_hit);
+			Destroy (other.gameObject);
 			//score stuff
 		}else if(other.gameObject.tag == "Obstacle"){
 			Debug.Log ("bad collision");
@@ -97,7 +104,7 @@ public class Player_controller : MonoBehaviour {
 			//score stuff
 		}else if(other.gameObject.tag == "Ground"){
 			grounded = true;
-			Debug.Log ("on ground");
+			//Debug.Log ("on ground");
 		}
 
 	}
@@ -105,7 +112,7 @@ public class Player_controller : MonoBehaviour {
 	void OnCollisionExit(Collision other){
 		if(other.gameObject.tag == "Ground"){
 			grounded = false;
-			Debug.Log ("off ground");
+			//Debug.Log ("off ground");
 		}
 	}
 
