@@ -41,6 +41,10 @@ public class Camera_controller : MonoBehaviour {
     {
         //for testing -->  if (Input.GetKeyDown("return")) CameraSetToEnd();
 
+		if(player.GetComponent<Player_controller>().gameWon == true){
+			cameraToEnd = true;
+		}
+
         if (!cameraToEnd) {
             //Player_controller s_controller = player.GetComponent<Player_controller>();
             float scaleRate = player.transform.localScale.y;
