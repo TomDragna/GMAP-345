@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GUI_controller : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class GUI_controller : MonoBehaviour {
     public Text speedText;
     public Text pointText;
     public Text sizeText;
+    public Text gameState; //win or lose, etc.
+    public GameObject restartButton;
 
     private float speed;
     private float diameter;
@@ -33,17 +36,31 @@ public class GUI_controller : MonoBehaviour {
     {
         Rigidbody rb = player.GetComponent<Rigidbody>();
         Renderer rend = player.GetComponent<Renderer>();
-		if (!player.GetComponent<Player_controller> ().gameLost) {
-			diameter = rend.bounds.size.x * 3.28f;
-			speed = rb.velocity.magnitude * 2.2369362912f;
-			points = 5;
-			//Debug.Log(points);
-			AddSize (diameter);
-			AddMph (speed);
-			AddPoints (points);
-		} else {
+
+        bool gameLost = player.GetComponent<Player_controller>().gameLost;
+        bool gameWon = player.GetComponent<Player_controller>().gameWon;
+
+
+        if (!gameLost && !gameWon) {
+            diameter = rend.bounds.size.x * 3.28f;
+            speed = rb.velocity.magnitude * 2.2369362912f;
+            points = 5;
+            //Debug.Log(points);
+            AddSize(diameter);
+            AddMph(speed);
+            AddPoints(points);
+        } else if (gameLost) {
+            gameState.text = "You Lose";
+            restartButton.SetActive(true);
+        } else if (gameWon) {
+            gameState.text = "You Win" + '\n' + "Your Score is: " + score;
+            restartButton.SetActive(true);
+        } else {
 			//speedText.text = "OVER";
 		}
+
+
+        if (Input.GetKey("escape")) Application.Quit();
     }
 
     void AddSize(float fat)
@@ -81,5 +98,10 @@ public class GUI_controller : MonoBehaviour {
     void UpdateScore()
     {
         pointText.text = "Points: " + score;
+    }
+
+    public void restartGame ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
