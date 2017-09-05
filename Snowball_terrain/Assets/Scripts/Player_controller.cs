@@ -26,6 +26,7 @@ public class Player_controller : MonoBehaviour {
 	public int obstaclePenalty;
 	public GameObject gui;
 	public GameObject _camera;
+	public int winVel;
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -43,12 +44,18 @@ public class Player_controller : MonoBehaviour {
 	void FixedUpdate ()
     {
         Renderer rend = this.GetComponent<Renderer>();
-
+		if(gameWon == true){
+			Vector3 temp = GetComponent<Rigidbody> ().velocity;
+			temp.x = -winVel;
+			GetComponent<Rigidbody> ().velocity = temp;
+			return;
+		}
         if (transform.localScale.x < startScale.x && transform.localScale.y < startScale.y && transform.localScale.z < startScale.z) {
 			//lose condition check
 			Debug.Log ("you lost");
 			gameLost = true;
 			gameOver ();
+			return;
 		}
 
 		if(grounded == false){
@@ -115,6 +122,10 @@ public class Player_controller : MonoBehaviour {
 			transform.localScale -= new Vector3 (descaleRate,descaleRate,descaleRate);
 			gui.GetComponent<GUI_controller> ().subtractPoints (obstaclePenalty);
 		}else if(other.gameObject.tag == "Ground"){
+			if(gameWon == true){
+				GetComponent<Rigidbody> ().velocity = Vector3.zero;
+				return;
+			}
 			if (grounded == false) {
 				GameObject groundHit = Instantiate (snowman_hit);
 				groundHit.transform.position = transform.position;
