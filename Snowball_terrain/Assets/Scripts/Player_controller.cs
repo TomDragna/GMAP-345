@@ -25,6 +25,7 @@ public class Player_controller : MonoBehaviour {
 	public int snowBonus;
 	public int obstaclePenalty;
 	public GameObject gui;
+	public GameObject _camera;
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -120,6 +121,10 @@ public class Player_controller : MonoBehaviour {
 			}
 			grounded = true;
 			//Debug.Log ("on ground");
+		}else if(other.gameObject.tag == "End"){
+			gameWon = true;
+			_camera.GetComponent<Camera_controller> ().CameraSetToEnd ();
+			gameOver ();
 		}
 
 	}
@@ -133,7 +138,7 @@ public class Player_controller : MonoBehaviour {
 
 	void gameOver(){
 		if(gameLost == true){
-			rb.constraints = RigidbodyConstraints.FreezeAll;
+			rb.constraints = RigidbodyConstraints.FreezeAll;	//freeze player in place
 
 			//do x
 		}else if(gameWon == true){
