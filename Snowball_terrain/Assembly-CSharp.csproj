@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Camera_controller.cs" />
      <Compile Include="Assets\Scripts\empty_position.cs" />
      <Compile Include="Assets\Scripts\GUI_controller.cs" />
+     <Compile Include="Assets\Scripts\menuScript.cs" />
      <Compile Include="Assets\Scripts\parent_position.cs" />
      <Compile Include="Assets\Scripts\Player_controller.cs" />
      <Compile Include="Assets\Scripts\Trail_controller.cs" />
